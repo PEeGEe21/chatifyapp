@@ -1,0 +1,11 @@
+.login_pic_overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    background-color: #000;
+    border-radius: 0.5rem;
+    
+}

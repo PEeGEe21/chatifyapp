@@ -1,0 +1,241 @@
+.container {
+  padding: 0 2rem;
+  overflow-y: scroll;
+  background: #fff;
+  max-height: 100vh;
+  scroll-behavior: smooth;
+  /* max-height: 630px; */
+
+
+}
+
+.main {
+  /* min-height: 100vh; */
+  max-height: 100%;
+  /* overflow-y-scroll max-h-[630px] */
+  padding: 8rem 0;
+  flex: 1;
+  position: relative;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-end; */
+  /* align-items: center; */
+  /* overflow-y: scroll; */
+
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 967px;
+
+  background-color: rgb(250 232 255);
+
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center !important;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.inner_box {
+  
+  /* max-width: 800px; */
+  padding-bottom: 100px;
+  padding-top: 80px;
+
+}
+.welcome_grid {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+  flex-direction: column;
+  flex-wrap: wrap; 
+  /* max-width: 800px; */
+  padding-bottom: 100px;
+  /* padding-top: 100px; */
+
+}
+
+.grid {
+  display: flex;
+  align-items: flex-end;
+  /* justify-content: flex-end; */
+  flex-direction: column;
+  flex-wrap: wrap; 
+  /* max-width: 800px; */
+  padding-bottom: 100px;
+  /* padding-top: 100px; */
+
+}
+
+.grid_receiver {
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: flex-end; */
+  flex-direction: column;
+  flex-wrap: wrap; 
+  /* max-width: 800px; */
+  /* padding-bottom: 100px; */
+  padding-top: 100px;
+
+}
+
+.card {
+  margin: 1rem 1rem 3rem 1rem;
+  padding: 1.7rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+  position: relative;
+  
+}
+.sender_card {
+  /* margin: 1rem 1rem 3rem 1rem; */
+  margin-left: auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-right: 1rem;
+  padding: 1.7rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  /* float: left; */
+  /* clear: both; */
+  position: relative;
+}
+
+.receiver_card {
+  /* margin: 1rem 1rem 3rem 1rem; */
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-right: auto;
+  padding: 1.7rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* float: left; */
+  /* clear: both; */
+  position: relative;
+}
+
+
+.card:hover,
+.card:focus,
+.card:active,
+.sender_card:hover,
+.sender_card:focus,
+.sender_card:active,
+.receiver_card:hover,
+.receiver_card:focus,
+.receiver_card:active {
+  /* color: #0070f3; */
+  border-color: #0070f3;
+}
+
+.card h2,
+.sender_card h2,
+.receiver_card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p,
+.sender_card p,
+.receiver_card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .grid_receiver {
+    width: 100%;
+    flex-direction: column;
+  }
+  .container {
+    /* overflow-y: hidden; */
+  
+  }
+  
+}
