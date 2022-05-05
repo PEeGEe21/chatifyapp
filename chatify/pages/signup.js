@@ -174,7 +174,7 @@ const SignUp = () => {
                             </div>
 
                             <div className="flex items-center justify-between mt-5">
-                                <span className="w-1/5 border-b border-gray-400 md:w-1/6"></span>
+                                <span className="w-1/6 border-b border-gray-400 md:w-1/6"></span>
 
                                 <span className="text-xs text-gray-500 uppercase dark:text-gray-400">Already have an account? 
                                     <Link href="/login">
@@ -182,7 +182,7 @@ const SignUp = () => {
                                     </Link>
                                 </span>
                                 
-                                <span className="w-1/5 border-b border-gray-400 md:w-1/6"></span>
+                                <span className="w-1/6 border-b border-gray-400 md:w-1/6"></span>
                             </div>
                         </form>
     

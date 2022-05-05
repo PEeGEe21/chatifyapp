@@ -1,9 +1,15 @@
 import React, {useState} from 'react'
 import { BsEmojiSmileFill } from "react-icons/bs";
-import Picker from "emoji-picker-react";
+// import Picker from "emoji-picker-react";
 import { FaRegSmile } from 'react-icons/fa';
+import { FiSend } from 'react-icons/fi';
 import { IoMdSend } from "react-icons/io";
 
+import dynamic from "next/dynamic";
+
+const Picker = dynamic(() => import("emoji-picker-react"), {
+    ssr: false,
+  });
 
 
 const ChatInput = ({handleSendMsg}) => {
@@ -41,7 +47,7 @@ const ChatInput = ({handleSendMsg}) => {
                     </div>
                 </div>
 
-                <button type="submit" className="w-[10%] bg-indigo-600 h-10 md:h-14  text-white transition-colors duration-300 transform dark:text-white rounded-md flex items-center justify-center" onClick={(event) => sendChat(event)}><span className="hidden md:block">Send</span> <IoMdSend className="ml-0 md:ml-1"/></button>
+                <button type="submit" className="w-[10%] bg-indigo-600 h-10 md:h-14  text-white transition-colors duration-300 transform dark:text-white rounded-md flex items-center justify-center" onClick={(event) => sendChat(event)}><span className="hidden lg:block text-sm">Send</span> <FiSend className="ml-0 lg:ml-1"/></button>
             </form>
         </div>
     

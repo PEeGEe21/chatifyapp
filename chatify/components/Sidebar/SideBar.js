@@ -53,9 +53,8 @@ export const SideBar = ({showMobileMenu, contacts, changeChat}) => {
     setCurrentSelected(index.index);
     setDisplayedSelected(index.user);
 
-    console.log(displayedSelected, "hereee");
+    // console.log(displayedSelected, "hereee");
     changeChat(index.user);
-    console.log(changeChat)
   };
 
 
@@ -70,7 +69,8 @@ export const SideBar = ({showMobileMenu, contacts, changeChat}) => {
 
     } */}
         
-        <aside className="bg-fuchsia-100 w-full md:w-80 overflow-auto h-[100%] hidden md:block">
+        <aside className="bg-fuchsia-100 w-full md:w-[15rem] lg:w-80 overflow-auto h-[100%] hidden md:block">
+            
             <nav className="sidebar_nav">
                 <ul>
                 {menuItems.map(({ href, title }) => (
@@ -86,8 +86,7 @@ export const SideBar = ({showMobileMenu, contacts, changeChat}) => {
                 ))}
                 </ul>
                 <hr/>
-                
-
+          
 
                 <ul>
 

@@ -3,9 +3,10 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import dynamic from "next/dynamic";
 import { Navbar } from "../Navbar/navbar";
 import Head from "next/head";
-import {allUsersRoute} from '../../components/routes'
+import {allUsersRoute, host} from '../../components/routes'
 // const MyContext = React.createContext();
 // import { deviceType, eventEmitter } from "../../utils/index";
+import { io } from "socket.io-client";
 
 import { SideBar } from "../Sidebar/SideBar";
 import {useRouter} from 'next/router';
@@ -19,8 +20,10 @@ import Welcome from "../welcome";
 
 const Layout = ({children}) => {
   const router = useRouter();
+  const socket = useRef();
+
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const scrollRef = useRef();
+  // const scrollRef = useRef();
   const {Provider, Consumer } = React.createContext()
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
@@ -99,7 +102,7 @@ const Layout = ({children}) => {
                   // setCurrentUser(data)
                   // console.log(currentUser, "----- currrent user")
                   setCurrentUserName(data.username);
-                  console.log(currentUserName, "currentUserName")
+                  // console.log(currentUserName, "currentUserName")
                   setCurrentUserImage(data.avatarImage);
               }else{
                 if (!localStorage.getItem(('chatify-user'))) {
@@ -129,6 +132,17 @@ const Layout = ({children}) => {
     }, []);
 
 
+    useEffect(() => {
+      // async function socketFunction() {
+
+      if (currentUser) {
+        socket.current = io(host);
+        socket.current.emit("add-user", currentUser._id);
+      }
+
+    // }
+    // socketFunction();
+    }, [currentUser]);
 
     useEffect(() => {
       async function checkCurrentUser() {
@@ -138,7 +152,7 @@ const Layout = ({children}) => {
           // if (currentUser.isAvatarImageSet) {
             const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
             setContacts(data.data);
-            console.log(contacts)
+            // console.log(contacts)
            
           // }
         }catch(err){
@@ -162,7 +176,7 @@ const Layout = ({children}) => {
 
     const handleShowMobileMenu = () =>{
       setShowMobileMenu(!showMobileMenu)
-      scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+      // scrollRef.current?.scrollIntoView({ behavior: "smooth" });
 
       // console.log("workinggggg")
   }
@@ -192,7 +206,7 @@ const Layout = ({children}) => {
                 {currentChat === undefined ? (
                   <Welcome currentUserName={currentUserName} />
                     ) : ( 
-                  <Chat currentChat={currentChat} />      
+                  <Chat currentChat={currentChat} socket={socket}/>      
                 )} 
          {/* <Chat currentUser={currentUser} currentUserName={currentUserName} currentChat={currentChat} currentUserImage={currentUserImage} /> */}
               {/* {children} */}

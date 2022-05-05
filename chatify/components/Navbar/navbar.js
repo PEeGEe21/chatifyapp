@@ -18,7 +18,6 @@ export const Navbar = ({handleShowMobileMenu, currentUserImage, currentUserName,
 
     const handleShowDropdownMobileMenu = () =>{
         setDropdownMobileMenu(!dropdownMobileMenu)
-        console.log("workss")
     };
 
     // console.log(currentUser, "currentUser")
@@ -27,7 +26,6 @@ export const Navbar = ({handleShowMobileMenu, currentUserImage, currentUserName,
     }
 
     useEffect(() =>{
-        console.log("useEffect works")
         window.addEventListener('scroll', isSticky);
         return () =>{
           window.removeEventListener('scroll', isSticky);
@@ -36,7 +34,6 @@ export const Navbar = ({handleShowMobileMenu, currentUserImage, currentUserName,
     
       
       const isSticky = (e) => {
-         console.log("workssnknrkvnk")
         // var browserWindow = $(window);
         // if (window.width > 767) {
           const header = document.querySelector('.header');
@@ -54,7 +51,7 @@ export const Navbar = ({handleShowMobileMenu, currentUserImage, currentUserName,
   return (
       <>
 
-    <nav className="bg-white shadow dark:bg-gray-800 border-b header">
+    <nav className="bg-white shadow dark:bg-gray-800 border-b nav_header">
         <div className="container px-6 py-3 mx-auto">
             <div className="md:flex md:items-center md:justify-between">
                 <div className="flex items-center justify-between">

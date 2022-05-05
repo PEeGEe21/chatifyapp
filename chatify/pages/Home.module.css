@@ -1,12 +1,21 @@
 .container {
-  padding: 0 2rem;
-  overflow-y: scroll;
   background: #fff;
-  max-height: 100vh;
   scroll-behavior: smooth;
-  height: 100%;
   position: relative;
   /* max-height: 630px; */
+  max-height: 100vh;
+  height: 100%;
+
+}
+
+.inner_container{
+  padding: 0 2rem;
+  overflow-y: scroll;
+  max-height: 100vh;
+  height: 100%;
+  scroll-behavior: smooth;
+
+
 
 
 }
@@ -33,10 +42,10 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 20px;
+  position: absolute;
+  bottom: 0px;
   width: 100%;
-  max-width: 967px;
+  /* max-width: 967px; */
 
   background-color: rgb(250 232 255);
 
